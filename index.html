@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Machine à Langue – Cours, exercices et boutique de français</title>
+<meta name="description" content="Cours de français, activités de langue, exercices interactifs et ressources à télécharger par le Prof. El Khoumssi.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,700&display=swap">
+<style>
+:root{--pp:#fbfcff;--ln:#dbe3f5;--ink:#17338a;--tx:#1b2233;--mt:#566079;--red:#c8321f;--hl:#fff0a8;--bd:#c9d3ea;--sf:#fff;--ok:#1c7a4a;--mg:#f1b4ab;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--pp:#141a2b;--ln:#212b47;--ink:#9db7ff;--tx:#e9edf8;--mt:#9aa5c0;--red:#ff8a78;--hl:#4a4320;--bd:#2f3a5c;--sf:#1a2238;--ok:#5fd09a;--mg:#6b3a3a}}
+:root[data-theme="dark"]{color-scheme:dark;--pp:#141a2b;--ln:#212b47;--ink:#9db7ff;--tx:#e9edf8;--mt:#9aa5c0;--red:#ff8a78;--hl:#4a4320;--bd:#2f3a5c;--sf:#1a2238;--ok:#5fd09a;--mg:#6b3a3a}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--pp);color:var(--tx);font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+background-image:linear-gradient(var(--ln) 1px,transparent 1px),linear-gradient(90deg,var(--ln) 1px,transparent 1px);background-size:32px 32px}
+h1,h2,h3{font-family:Newsreader,Georgia,serif;line-height:1.2;color:var(--ink);margin:0 0 .5em}
+h1{font-size:clamp(2rem,6vw,3.1rem)}h2{font-size:1.7rem}h3{font-size:1.25rem}
+a{color:var(--ink)}.mt{color:var(--mt)}
+header,main,footer{max-width:880px;margin:0 auto;padding:0 18px}
+header{display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;justify-content:space-between;padding-top:16px;padding-bottom:12px}
+.brand{font:700 1.35rem Newsreader,Georgia,serif;color:var(--ink);text-decoration:none}
+nav{display:flex;flex-wrap:wrap;gap:4px 16px}nav a{text-decoration:none;color:var(--mt);padding:4px 0;border-bottom:2px solid transparent}
+nav a[aria-current="page"]{color:var(--ink);border-color:var(--red)}
+main{background:var(--sf);border-left:3px solid var(--mg);border-radius:0 6px 6px 0;padding-top:28px;padding-bottom:36px;min-height:60vh;box-shadow:0 0 0 1px var(--bd)}
+section[hidden]{display:none}
+.btn,.opt,.chip{font:inherit;cursor:pointer;border:1.5px solid var(--ink);background:transparent;color:var(--ink);border-radius:6px;padding:9px 16px;text-decoration:none;display:inline-block}
+.btn.pri{background:var(--ink);color:var(--pp)}.btn:hover,.opt:hover{background:var(--hl);color:var(--tx)}.btn.pri:hover{background:var(--ink);opacity:.9;color:var(--pp)}
+:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+.row{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}
+.cor{font:500 clamp(1.15rem,3.6vw,1.5rem)/1.7 Newsreader,Georgia,serif;margin:22px 0;padding:14px 16px;border:1.5px dashed var(--bd);border-radius:6px;background:var(--pp)}
+.cor s{color:var(--red);text-decoration-thickness:2px}.cor b{color:var(--red);font-weight:700;background:var(--hl);padding:0 4px}.cor small{display:block;color:var(--mt);font:15px system-ui,sans-serif}
+details{border-top:1px solid var(--bd);padding:12px 0}details:last-child{border-bottom:1px solid var(--bd)}
+summary{cursor:pointer;display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline}summary b{font-family:Newsreader,Georgia,serif;font-size:1.15rem;color:var(--ink)}
+.tg{font-size:.88rem;color:var(--mt)}.tg span+span::before{content:"";margin:0 6px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.chip[aria-pressed="true"]{background:var(--ink);color:var(--pp)}
+input[type=search],#fi{font:inherit;padding:9px 12px;border:1.5px solid var(--bd);border-radius:6px;background:var(--pp);color:var(--tx);width:100%;max-width:420px}
+.opts{display:grid;gap:8px;margin:12px 0}.opt{text-align:left}.opt.good{background:var(--ok);border-color:var(--ok);color:#fff}.opt.bad{border-color:var(--red);color:var(--red);text-decoration:line-through}
+.fb{padding:10px 12px;border-left:4px solid var(--ok);background:var(--pp)}.fb.ko{border-color:var(--red)}
+.pairs{display:grid;grid-template-columns:1fr 1fr;gap:8px}.pairs .opt{padding:8px 10px;font-size:.95rem}.opt.sel{background:var(--hl);color:var(--tx)}.opt.done{opacity:.45;pointer-events:none}
+.card{min-height:150px;display:grid;place-items:center;text-align:center;padding:18px;border:1.5px solid var(--ink);border-radius:6px;background:var(--pp);cursor:pointer;font-size:1.15rem}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}.tile{border:1.5px solid var(--bd);border-radius:6px;padding:14px;background:var(--pp)}.tile:nth-child(2){border-radius:18px 6px 18px 6px}
+.shop{display:grid;grid-template-columns:1fr auto;gap:4px 16px;align-items:center;border-top:1px solid var(--bd);padding:14px 0}.price{font:700 1.3rem Newsreader,Georgia,serif;color:var(--red)}
+dialog{border:2px solid var(--ink);border-radius:8px;background:var(--sf);color:var(--tx);max-width:440px;width:calc(100% - 32px);padding:20px}dialog::backdrop{background:rgba(10,14,28,.6)}
+.bar{height:6px;background:var(--ln);border-radius:3px;margin:8px 0 14px}.bar i{display:block;height:100%;background:var(--red);border-radius:3px}details ol,details ul{padding-left:1.2em;margin:.5em 0 1em}label{display:block;padding:4px 0}input[type=date]{font:inherit;padding:7px 10px;border:1.5px solid var(--bd);border-radius:6px;background:var(--pp);color:var(--tx)}.shop{border-left:4px solid var(--hl);padding-left:12px}a.tile{color:inherit;display:block;text-decoration:none}a.tile:hover{background:var(--hl)}
+footer{padding-top:18px;padding-bottom:28px;color:var(--mt);font-size:.92rem}
+@media (max-width:520px){.shop{grid-template-columns:1fr}.pairs{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:no-preference){.cor b{animation:hl .9s .3s both}@keyframes hl{from{background:transparent}}}
+</style>
+</head>
+<body>
+<header>
+<a class="brand" href="#accueil">Machine à Langue</a>
+<nav aria-label="Navigation principale">
+<a href="#accueil">Accueil</a><a href="#cours">Cours</a><a href="#activites">Activités</a><a href="#exercices">Exercices</a><a href="#methodes">Méthodes</a><a href="#boutique">Boutique</a><a href="#contact">Contact</a>
+</nav>
+</header>
+<main>
+<section id="p-accueil">
+<h1>Apprenez le français avec méthode.</h1>
+<p class="mt">Cours clairs, exercices corrigés et ressources à télécharger, par le Prof. El Khoumssi, professeur de français. Plus de 198 000 personnes suivent déjà la page Facebook Machine à Langue.</p>
+<p class="cor"><s>Malgré que</s> <b>Bien que</b> vous ayez fait cette faute, elle se corrige en trente secondes.<small>Après « bien que », on emploie le subjonctif.</small></p>
+<div class="row"><button class="btn pri" data-go="quiz">Commencer un quiz</button><a class="btn" href="#cours">Parcourir les cours</a><a class="btn" href="#boutique">Voir la boutique</a></div>
+<div class='tiles' id='hm'></div>
+</section>
+
+<section id="p-cours" hidden>
+<h2>Banque de cours</h2>
+<input type="search" id="q" placeholder="Rechercher un cours (ex. subjonctif)" aria-label="Rechercher un cours">
+<div class="chips" id="chips"></div>
+<div id="cl"></div>
+</section>
+
+<section id="p-activites" hidden>
+<h2>Activités de langue</h2>
+<p class="mt">Trois façons courtes de pratiquer chaque jour.</p>
+<div class="tiles">
+<div class="tile"><h3>Défi du jour</h3><p>Une question qui change chaque jour. Deux minutes suffisent.</p><button class="btn" data-go="daily">Relever le défi</button></div>
+<div class="tile"><h3>Quiz éclair</h3><p>Cinq questions tirées au hasard : grammaire, orthographe, conjugaison.</p><button class="btn" data-go="eclair">Lancer le quiz</button></div>
+<div class="tile"><h3>Cartes de révision</h3><p>Retournez la carte, puis dites si vous saviez. Les cartes ratées reviennent.</p><button class="btn" data-go="cards">Réviser</button></div>
+</div>
+</section>
+
+<section id="p-exercices" hidden>
+<h2>Exercices interactifs</h2>
+<div class="row"><button class="btn" data-go="quiz">QCM complet</button><button class="btn" data-go="trous">Texte à trous</button><button class="btn" data-go="match">Figures de style</button><button class="btn" data-go="ord">Remettre en ordre</button><button class="btn" data-go="dictee">Dictée</button></div>
+<div id="ex" aria-live="polite"><p class="mt">Choisissez un exercice ci-dessus.</p></div>
+</section>
+
+<section id='p-infos' hidden>
+<h2>Informations et conditions</h2>
+<details><summary><b>Mentions légales</b></summary><p>Site édité par Mohamed EL KHOUMSSI, professeur de français, sous le nom Machine à Langue. Contact : elkhoumssi62@gmail.com. Hébergeur : à compléter.</p></details>
+<details><summary><b>Conditions de vente</b></summary><p>Les produits sont des fichiers numériques. Les prix sont indiqués en dollars américains. Paiement par PayPal, virement bancaire ou Cash Plus. Le fichier est partagé par Google Drive après confirmation du paiement.</p></details>
+<details><summary><b>Remboursement</b></summary><p>Un produit numérique livré n’est pas remboursable, sauf fichier défectueux ou non conforme à sa description. Écrivez-nous sous 7 jours avec votre preuve d’achat.</p></details>
+<details><summary><b>Confidentialité</b></summary><p>Votre e-mail ou numéro WhatsApp sert uniquement à traiter votre commande et à vous répondre. Votre progression aux exercices reste enregistrée dans votre navigateur et n’est pas envoyée.</p></details>
+<p class='mt'>Textes provisoires : à faire valider avant l’ouverture officielle de la boutique.</p>
+</section>
+
+<section id='p-methodes' hidden>
+<h2>Boîte à outils méthodologiques</h2>
+<p class='mt'>Des méthodes courtes à appliquer le jour même, avec deux outils interactifs.</p>
+<details><summary><b>Réussir un résumé</b><span class='tg'><span>2ème Bac</span></span></summary><ol><li>Lire le texte deux fois.</li><li>Repérer la thèse et les articulations logiques.</li><li>Supprimer exemples, répétitions et détails.</li><li>Reformuler chaque idée avec ses propres mots.</li><li>Compter les mots et respecter la consigne.</li></ol><button class='btn' data-b='7'>Fiche méthode complète</button></details>
+<details><summary><b>Construire un commentaire composé</b><span class='tg'><span>2ème Bac</span></span></summary><ol><li>Lire et formuler un projet de lecture.</li><li>Relever les procédés d’écriture par thème.</li><li>Regrouper en deux ou trois axes.</li><li>Écrire l’introduction : amorce, présentation, problématique, annonce du plan.</li><li>Rédiger chaque axe : idée, citation courte, interprétation.</li><li>Conclure par un bilan et une ouverture.</li></ol><button class='btn' data-b='2'>Fiches Bac associées</button></details>
+<details><summary><b>Rédiger une production écrite argumentée</b><span class='tg'><span>1ère et 2ème Bac</span></span></summary><ol><li>Reformuler le sujet et poser une problématique.</li><li>Choisir deux ou trois arguments.</li><li>Pour chaque argument : affirmation, explication, exemple, lien avec la thèse.</li><li>Relier les parties avec des connecteurs variés.</li><li>Conclure sans introduire d’argument nouveau.</li></ol><button class='btn' data-b='7'>Gabarits à remplir</button></details>
+<details><summary><b>Analyser un texte argumentatif</b><span class='tg'><span>Tous niveaux</span></span></summary><ol><li>Trouver la thèse défendue.</li><li>Lister les arguments et les exemples.</li><li>Identifier le raisonnement : déduction, induction ou concession.</li><li>Repérer le ton et les procédés de persuasion.</li><li>Dire à quoi sert le texte : convaincre, persuader ou délibérer.</li></ol></details>
+<details><summary><b>Planifier ses révisions</b><span class='tg'><span>Outil interactif</span></span></summary><p>Choisissez le jour où vous apprenez une leçon : voici les dates de révision espacée.</p><input type='date' id='rd' aria-label='Date de la leçon'><ul id='ro'></ul></details>
+<details><summary><b>Checklist de relecture</b><span class='tg'><span>Outil interactif</span></span></summary><div id='ck'></div></details>
+</section>
+
+<section id="p-boutique" hidden>
+<h2>Boutique</h2>
+<p class="mt">Ressources numériques à télécharger. Après confirmation du paiement, le fichier vous est partagé par Google Drive.</p>
+<div id="pl"></div>
+</section>
+
+<section id="p-contact" hidden>
+<h2>Contact</h2>
+<p>Une question, une commande, une collaboration ? Écrivez-moi.</p>
+<div class="row"><a class="btn pri" id="cw" target="_blank" rel="noopener">WhatsApp</a><a class="btn" id="cm">Envoyer un e-mail</a><a class="btn" id="cf" target="_blank" rel="noopener">Page Facebook</a><a class="btn" id="cn">S’abonner aux nouveautés</a></div>
+</section>
+</main>
+<footer>© 2026 Machine à Langue, Prof. El Khoumssi. Contenus pédagogiques à usage personnel ou en classe. <a href='#infos'>Mentions, conditions et confidentialité</a></footer>
+
+<dialog id="dl"><div id="dc"></div><div class="row"><button class="btn" id="dx">Fermer</button></div></dialog>
+
+<script>
+const CFG={wa:"21230749641",mail:"elkhoumssi62@gmail.com",fb:"https://www.facebook.com/search/pages/?q=Machine%20%C3%A0%20LANGUE%20Le%20Fran%C3%A7ais%20Mohamed%20EL%20KHOUMSSI",paypalMe:""};
+const C=[
+{t:"COD ou COI ?",n:"Tronc commun",m:"Grammaire",l:"Le COD répond à « qui ? quoi ? » sans préposition : je lis un livre. Le COI répond à « à qui ? à quoi ? de qui ? de quoi ? » : je parle à Paul. Pronoms : le, la, les pour le COD ; lui, leur pour le COI introduit par « à »."},
+{t:"Le subjonctif présent",n:"1ère Bac",m:"Conjugaison",l:"Il s’emploie après « il faut que », « bien que », « pour que ». On part de la 3e personne du pluriel de l’indicatif (ils finissent) : que je finisse, que tu finisses, qu’il finisse, que nous finissions. Irréguliers : être, avoir, aller, faire, pouvoir, savoir."},
+{t:"Le passé simple",n:"2ème Bac",m:"Conjugaison",l:"Temps du récit littéraire, surtout à la 3e personne. 1er groupe : -ai, -as, -a, -âmes, -âtes, -èrent. 2e groupe : -is, -is, -it, -îmes, -îtes, -irent. Il exprime des actions achevées qui font avancer l’histoire."},
+{t:"Les connecteurs logiques",n:"2ème Bac",m:"Expression écrite",l:"Cause : car, en effet. Conséquence : donc, ainsi. Opposition : mais, cependant. Concession : certes… mais. Addition : de plus. Préférez « en revanche » à « par contre » à l’écrit soigné."},
+{t:"Les figures d’analogie",n:"2ème Bac",m:"Littérature",l:"La comparaison utilise un outil (comme, tel, pareil à). La métaphore n’en a pas. La personnification prête des traits humains à une chose ou à un animal. L’allégorie représente une idée abstraite par une image développée."},
+{t:"Se présenter en français",n:"FLE",m:"Débutants",l:"Je m’appelle… J’habite à… Je suis étudiant(e). J’ai… ans. Avec un inconnu ou une personne âgée, on vouvoie ; avec un ami, on tutoie."},
+{t:"Les homophones grammaticaux",n:"Tronc commun",m:"Orthographe",l:"a/à : « a » vient d’avoir (il avait). on/ont : « ont » vient d’avoir (ils avaient). ses/ces : « ses » = les siens ; « ces » = ceux-ci. son/sont : « sont » vient d’être (ils étaient). Astuce : remplacez par l’imparfait ou par un autre déterminant."},
+{t:"L’accord du participe passé",n:"1ère Bac",m:"Grammaire",l:"Avec être, le participe s’accorde avec le sujet : elles sont parties. Avec avoir, il s’accorde avec le COD placé avant le verbe : les fleurs que j’ai cueillies. Sans COD avant, il reste invariable : j’ai cueilli des fleurs. Verbes pronominaux : « elles se sont parlé » (se est COI, donc invariable)."},
+{t:"Imparfait ou passé composé ?",n:"Tronc commun",m:"Conjugaison",l:"L’imparfait décrit l’arrière-plan, une durée ou une habitude : il pleuvait. Le passé composé raconte une action achevée au premier plan : il a ouvert la porte. Test : l’action fait-elle avancer l’histoire (passé composé) ou la décrit-elle (imparfait) ?"},
+{t:"Les registres de langue",n:"Tronc commun",m:"Vocabulaire",l:"Familier : bagnole, bosser. Courant : voiture, travailler. Soutenu : automobile, œuvrer. On choisit le registre selon la situation, l’interlocuteur, l’écrit ou l’oral."},
+{t:"La proposition subordonnée relative",n:"1ère Bac",m:"Grammaire",l:"Elle complète un nom (l’antécédent) et commence par un pronom relatif : qui (sujet), que (COD), dont (introduit par « de »), où (lieu ou temps). Déterminative : sans virgule, indispensable au sens. Explicative : entre virgules, elle apporte une précision."},
+{t:"La phrase complexe",n:"1ère Bac",m:"Grammaire",l:"Une phrase complexe contient plusieurs verbes conjugués. Les propositions sont juxtaposées (virgule), coordonnées (mais, ou, et, donc, or, ni, car) ou subordonnées (conjonction ou pronom relatif). Repérez d’abord les verbes conjugués."},
+{t:"Réussir le résumé de texte",n:"2ème Bac",m:"Méthodologie",l:"Lisez deux fois, repérez la thèse et les articulations, supprimez exemples et détails, reformulez avec vos mots, respectez le nombre de mots de la consigne et conservez le système d’énonciation du texte."},
+{t:"Les registres littéraires",n:"2ème Bac",m:"Littérature",l:"Lyrique : émotions personnelles. Tragique : fatalité et destin. Pathétique : pitié du lecteur. Comique : rire. Épique : exploits grandioses. Satirique : critique moqueuse. Polémique : attaque vive d’une idée ou d’une personne."}];
+const Q=[
+{k:"mcq",q:"« Après qu’il ___ », quelle forme est correcte ?",o:["soit parti","est parti","fût parti"],a:1,e:"Après « après que », on emploie l’indicatif : le fait est réalisé."},
+{k:"mcq",q:"« ___ soit la réponse, justifiez-la. »",o:["Quelque","Quelle que","Quel que"],a:1,e:"« quel que » s’accorde avec « réponse » (féminin) : quelle que soit la réponse."},
+{k:"mcq",q:"Marie a perdu ___ clés.",o:["ses","ces"],a:0,e:"« ses » = les siennes (possessif). Test : on peut dire « les clés de Marie »."},
+{k:"mcq",q:"Ils ___ gagné le match.",o:["on","ont"],a:1,e:"« ont » vient du verbe avoir. Test : « ils avaient gagné »."},
+{k:"mcq",q:"Dans « Je pense à elle », « à elle » est…",o:["COD","COI","Attribut"],a:1,e:"Le verbe « penser à » se construit avec une préposition : c’est un COI."},
+{k:"mcq",q:"Il faut que tu ___ avant demain.",o:["finis","finisses","finiras"],a:1,e:"« il faut que » est suivi du subjonctif présent : que tu finisses."},
+{k:"mcq",q:"Si j’avais su, je ___ plus tôt.",o:["viendrais","serais venu","suis venu"],a:1,e:"Système « si + plus-que-parfait » → conditionnel passé : je serais venu."},
+{k:"mcq",q:"Dans « Elle semble heureuse », « heureuse » est…",o:["COD","attribut du sujet","complément du nom"],a:1,e:"« sembler » est un verbe d’état : il introduit un attribut du sujet."},
+{k:"mcq",q:"Quelle phrase est la plus correcte ?",o:["On doit pallier à ce manque.","On doit pallier ce manque."],a:1,e:"« pallier » se construit avec un COD ; « pallier à » est critiqué."},
+{k:"mcq",q:"Il travaille ___ qu’avant.",o:["davantage","d’avantage"],a:0,e:"« davantage » signifie « plus ». Test : remplacez par « plus »."},
+{k:"fill",q:"Nous ___ ensemble. (manger)",a:["mangeons"],e:"Verbe en -ger : on garde le « e » devant « o » pour conserver le son [ʒ]."},
+{k:"fill",q:"Nous ___ le cours. (commencer)",a:["commençons"],e:"Verbe en -cer : « ç » devant « o »."},
+{k:"fill",q:"Il faut que nous ___ . (finir)",a:["finissions"],e:"Subjonctif présent, 1re personne du pluriel : que nous finissions."},
+{k:"fill",q:"Elles sont ___ contentes. (tout)",a:["toutes"],e:"« tout » adverbe s’accorde devant un adjectif féminin commençant par une consonne."},
+{k:"match",q:"Associez chaque phrase à sa figure de style.",p:[["Il est fort comme un lion","comparaison"],["Cet homme est un lion","métaphore"],["La nuit se penche sur la ville","personnification"],["J’ai mille choses à faire","hyperbole"]],e:"Comparaison : outil « comme ». Métaphore : sans outil. Personnification : trait humain. Hyperbole : exagération."},
+{k:"mcq",q:"Les fleurs que j’ai ___ sont belles.",o:["cueilli","cueillies","cueillis"],a:1,e:"Avec avoir, le participe s’accorde avec le COD placé avant : « que » = les fleurs (féminin pluriel)."},
+{k:"mcq",q:"Il ___ quand je suis sorti.",o:["pleut","pleuvait","a plu"],a:1,e:"L’imparfait décrit l’arrière-plan ; « je suis sorti » est l’action de premier plan."},
+{k:"mcq",q:"Les enfants sont ___ en retard.",o:["arrivé","arrivés","arrivées"],a:1,e:"Avec être, le participe s’accorde avec le sujet : les enfants (masculin pluriel)."},
+{k:"mcq",q:"Le mot « bagnole » appartient au registre…",o:["familier","courant","soutenu"],a:0,e:"« bagnole » est familier ; « voiture » est courant et « automobile » plus soutenu."},
+{k:"mcq",q:"Le livre ___ je parle est sur la table.",o:["que","dont","qui"],a:1,e:"On dit « parler de quelque chose » : le pronom relatif est « dont »."},
+{k:"mcq",q:"Dans « Je viens, mais il reste », les deux propositions sont…",o:["juxtaposées","coordonnées","subordonnées"],a:1,e:"« mais » est une conjonction de coordination : elle relie deux propositions indépendantes."},
+{k:"mcq",q:"Quel connecteur exprime l’opposition ?",o:["donc","cependant","car"],a:1,e:"« cependant » marque l’opposition ; « donc » la conséquence et « car » la cause."},
+{k:"mcq",q:"Dans un résumé, il faut…",o:["recopier les phrases clés","reformuler avec ses mots","donner son avis"],a:1,e:"Un résumé reformule les idées essentielles, sans recopier ni commenter."},
+{k:"mcq",q:"« Elle a un cœur de pierre » est…",o:["une comparaison","une métaphore","une anaphore"],a:1,e:"Aucun outil de comparaison : la métaphore identifie directement le cœur à de la pierre."},
+{k:"mcq",q:"« Rien ne change, rien ne bouge, rien ne finit. » est…",o:["une anaphore","une antithèse","une hyperbole"],a:0,e:"La répétition de « rien ne » en début de groupes est une anaphore."},
+{k:"fill",q:"Les lettres que j’ai ___ sont parties. (écrire)",a:["écrites"],e:"COD « que » = les lettres, placé avant avoir : accord au féminin pluriel."},
+{k:"fill",q:"Il faut que je ___ à l’heure. (être)",a:["sois"],e:"Subjonctif présent du verbe être : que je sois."},
+{k:"fill",q:"Quand tu ___ , appelle-moi. (finir, futur antérieur)",a:["auras fini"],e:"Futur antérieur : futur de l’auxiliaire avoir + participe passé."},
+{k:"fill",q:"Elles se sont ___ hier. (parler)",a:["parlé"],e:"« se » est COI (parler à quelqu’un) : le participe reste invariable."},
+{k:"ord",q:"Remettez les mots dans l’ordre.",w:["Les","élèves","ont","terminé","leur","exercice"],a:"Les élèves ont terminé leur exercice",e:"Sujet, auxiliaire, participe passé, puis le complément."},
+{k:"ord",q:"Remettez les mots dans l’ordre.",w:["Bien que","tu","sois","fatigué,","tu","dois","finir"],a:"Bien que tu sois fatigué, tu dois finir",e:"La subordonnée introduite par « bien que » se met au subjonctif : tu sois."},
+{k:"ord",q:"Remettez les mots dans l’ordre.",w:["Après qu’il","est","parti,","nous","avons","dîné"],a:"Après qu’il est parti, nous avons dîné",e:"« après que » est suivi de l’indicatif."},
+{k:"fill",s:"Les enfants sont arrivés en retard",q:"Écoutez la phrase et écrivez-la.",a:["les enfants sont arrivés en retard"],e:"Phrase attendue : Les enfants sont arrivés en retard. Participe accordé avec le sujet (être)."},
+{k:"fill",s:"Elle a mangé ses fruits",q:"Écoutez la phrase et écrivez-la.",a:["elle a mangé ses fruits"],e:"Phrase attendue : Elle a mangé ses fruits. « a » vient d’avoir ; « ses » est possessif."},
+{k:"fill",s:"Ils ont fini leurs devoirs",q:"Écoutez la phrase et écrivez-la.",a:["ils ont fini leurs devoirs"],e:"Phrase attendue : Ils ont fini leurs devoirs. « ont » vient d’avoir ; « leurs » s’accorde avec devoirs."}];
+const F=[["COD","Complément d’objet direct : répond à « qui ? quoi ? », sans préposition."],["COI","Complément d’objet indirect : répond à « à qui ? de quoi ? », avec préposition."],["Davantage","Adverbe qui signifie « plus » ; « d’avantage » = de + avantage."],["Après que","Se construit avec l’indicatif."],["Bien que","Se construit avec le subjonctif."],["Anaphore","Répétition d’un mot ou d’un groupe de mots en début de phrases."],["Antithèse","Opposition de deux idées ou de deux mots rapprochés."],["Passé simple, 3e personne, 1er groupe","-a au singulier, -èrent au pluriel."],["Participe passé avec avoir","S’accorde avec le COD placé avant le verbe."],["Participe passé avec être","S’accorde avec le sujet."],["Relative déterminative","Sans virgule, indispensable au sens de l’antécédent."],["Hyperbole","Exagération pour frapper l’esprit."],["Métaphore","Comparaison sans outil : « cet homme est un lion »."],["Imparfait","Arrière-plan, durée, habitude."],["Passé composé","Action achevée, premier plan ou lien avec le présent."],["Futur antérieur","Action future achevée avant une autre action future."]];
+const P=[
+{t:"Livret grammaire : 100 fiches",f:"PDF",p:7.99,m:["Grammaire"],d:"Toutes les notions de grammaire du lycée en fiches claires.",i:["100 fiches illustrées d’exemples","Exercices avec corrigés","Index des notions"]},
+{t:"Pack orthographe : 50 exercices interactifs",f:"HTML",p:5.99,m:["Orthographe"],d:"Homophones, accords et pièges courants, corrigés en direct.",i:["50 exercices auto-corrigés","Suivi du score","Fonctionne hors ligne"]},
+{t:"Fiches Bac de français 2ème Bac",f:"PDF",p:6.99,m:["Littérature","Expression écrite"],d:"L’essentiel des épreuves de français en fiches de révision.",i:["Fiches par genre et par registre","Plans types rédigés","Listes de connecteurs et de procédés"]},
+{t:"Outil Avion des Natures Grammaticales",f:"HTML",p:9.99,m:[],d:"Un jeu interactif pour maîtriser les 10 natures grammaticales.",i:["Cours des 10 natures","Jeux et niveaux","Export PDF des résultats"]},
+{t:"Pack conjugaison : tous les temps",f:"PDF + HTML",p:8.99,m:["Conjugaison"],d:"Formation, valeurs et emplois de chaque temps, avec entraînement.",i:["Tableaux par groupe de verbes","Exercices interactifs","Fiche des verbes irréguliers"]},
+{t:"Bundle complet Machine à Langue",f:"Pack",p:24.99,m:[],d:"Tous les produits de la boutique à prix réduit.",i:["Les 9 autres produits","Fichiers partagés par Google Drive","Assistance par WhatsApp"]},
+{t:"Parcours FLE débutant A1-A2",f:"PDF + HTML",p:6.99,m:["Débutants"],d:"Un parcours progressif pour apprendre à communiquer en français.",i:["20 leçons guidées","Dialogues et vocabulaire","Quiz de fin de module"]},
+{t:"Boîte à outils méthodologiques",f:"PDF",p:5.99,m:["Méthodologie"],d:"Résumé, commentaire, production écrite, révisions : les méthodes pas à pas.",i:["6 méthodes détaillées","Gabarits à remplir","Checklists de relecture"]},
+{t:"Carnet de vocabulaire et d’expressions",f:"PDF",p:4.99,m:["Vocabulaire"],d:"Mots et expressions à retenir, classés par thème et par registre.",i:["Listes thématiques","Expressions avec origine","Cartes à imprimer"]},
+{t:"Kit de l’enseignant : cahier journal et séances",f:"PDF + modèles",p:8.99,m:[],d:"Modèles prêts à adapter pour préparer et suivre vos séances.",i:["Modèle de cahier journal","Fiche de préparation de séance","Grilles d’évaluation"]}];
+const PX=[
+{t:"Livret grammaire : 100 fiches",f:"PDF",p:7.99},{t:"Pack orthographe : 50 exercices interactifs",f:"HTML",p:5.99},{t:"Fiches Bac de français 2ème Bac",f:"PDF",p:6.99},
+{t:"Outil Avion des Natures Grammaticales",f:"HTML",p:9.99},{t:"Pack conjugaison : tous les temps",f:"PDF + HTML",p:8.99},{t:"Bundle complet Machine à Langue",f:"Pack",p:24.99}];
+const $=s=>document.querySelector(s),H=(e,h)=>{e.innerHTML=h};
+const sh=a=>a.map(x=>[Math.random(),x]).sort((p,q)=>p[0]-q[0]).map(x=>x[1]);
+const nm=s=>s.trim().toLowerCase();
+const wa=t=>"https://wa.me/"+CFG.wa+"?text="+encodeURIComponent(t);
+const rp=c=>{const p=P.find(x=>x.m.includes(c.m));return p?`<button class='btn' data-b='${P.indexOf(p)}'>Ressource associée : ${p.t}</button>`:''};
+const MM={quiz:'Grammaire',trous:'Conjugaison',match:'Littérature',eclair:'Orthographe',daily:'Grammaire',cards:'Vocabulaire'};
+$("#cw").href=wa("Bonjour, je vous contacte depuis le site Machine à Langue.");$("#cm").href="mailto:"+CFG.mail;$("#cf").href=CFG.fb;$("#cn").href="mailto:"+CFG.mail+"?subject="+encodeURIComponent("Inscription aux nouveautés Machine à Langue");
+
+/* Routage */
+const S=["accueil","cours","activites","exercices","methodes","boutique","contact","infos"];
+function go(){const h=location.hash.slice(1),k=S.includes(h)?h:"accueil";
+S.forEach(s=>$("#p-"+s).hidden=s!==k);
+document.querySelectorAll("nav a").forEach(a=>a.setAttribute("aria-current",a.getAttribute("href")==="#"+k?"page":"false"));scrollTo(0,0)}
+addEventListener("hashchange",go);go();
+
+/* Cours */
+let niv="Tous",qs="";
+const NV=["Tous","Tronc commun","1ère Bac","2ème Bac","FLE"];
+function cours(){
+H($("#chips"),NV.map(n=>`<button class="chip" aria-pressed="${n===niv}" data-n="${n}">${n}</button>`).join(""));
+const L=C.filter(c=>(niv==="Tous"||c.n===niv)&&(c.t+c.m+c.l).toLowerCase().includes(qs));
+H($("#cl"),L.length?L.map(c=>`<details><summary><b>${c.t}</b><span class="tg"><span>${c.n}</span><span>${c.m}</span></span></summary><p>${c.l}</p><div class="row"><button class="btn" data-go="quiz">S’entraîner</button>${rp(c)}</div></details>`).join(""):'<p class="mt">Aucun cours ne correspond. Essayez un autre mot ou un autre niveau.</p>')}
+$("#chips").onclick=e=>{const b=e.target.closest("[data-n]");if(b){niv=b.dataset.n;cours()}};
+$("#q").oninput=e=>{qs=nm(e.target.value);cours()};cours();
+
+/* Exercices */
+let run=null;
+function start(m){
+if(m==="cards")run={m,L:sh(F).map(x=>({x,f:1})),i:0,s:0,flip:false};
+else{let L;
+if(m==="quiz")L=sh(Q.filter(x=>x.k==="mcq"));
+else if(m==="eclair")L=sh(Q.filter(x=>x.k!=="match"&&x.k!=="ord"&&!x.s)).slice(0,5);
+else if(m==="trous")L=Q.filter(x=>x.k==="fill"&&!x.s);else if(m==="ord")L=sh(Q.filter(x=>x.k==="ord"));else if(m==="dictee")L=sh(Q.filter(x=>x.s));
+else if(m==="match")L=Q.filter(x=>x.k==="match");
+else L=[Q[Math.floor(Date.now()/864e5)%Q.length]];
+run={m,L,i:0,s:0,done:false,sel:null,ok:0,err:false}}
+location.hash="exercices";draw()}
+function best(n){try{const b=JSON.parse(localStorage.getItem("mal_best")||"{}");if(n>(b[run.m]||0)){b[run.m]=n;localStorage.setItem("mal_best",JSON.stringify(b))}return b[run.m]||n}catch(e){return n}}
+function draw(){const r=run,box=$("#ex");if(!r)return;
+if(r.i>=r.L.length){const n=r.s,t=r.m==="cards"?F.length:r.L.length;
+H(box,`<h3>Série terminée</h3><p>Score : <b>${n} sur ${t}</b>. Meilleur score sur ce mode : ${best(n)}.</p><div class="row"><button class="btn pri" data-go="${r.m}">Recommencer</button><a class="btn" href="#cours">Revoir les cours</a>${rp({m:MM[r.m]})}</div>`);return}
+if(r.m==="cards"){const c=r.L[r.i];
+H(box,`<p class="mt">Carte ${r.i+1} sur ${r.L.length}</p><div class="card" id="cd" role="button" tabindex="0">${r.flip?c.x[1]:"<b>"+c.x[0]+"</b>"}</div>`+(r.flip?'<div class="row"><button class="btn pri" data-k="1">Je savais</button><button class="btn" data-k="0">À revoir</button></div>':'<p class="mt">Touchez la carte pour la retourner.</p>'));return}
+const x=r.L[r.i];r.done=false;r.sel=null;r.ok=0;r.err=false;
+let h=`<p class="mt">Question ${r.i+1} sur ${r.L.length}</p><div class="bar"><i style="width:${r.i/r.L.length*100}%"></i></div><h3>${x.q}</h3>`;
+if(x.k==="mcq")h+=`<div class="opts">${x.o.map((o,j)=>`<button class="opt" data-j="${j}">${o}</button>`).join("")}</div>`;
+if(x.s)h+='<button type="button" class="btn" id="sp">Écouter la phrase</button> ';
+if(x.k==="ord"){r.ans=[];const T=sh(x.w.map((w,j)=>[w,j]));h+=`<p id='oa' class='cor' aria-live='polite'>&nbsp;</p><div class='row'>${T.map(w=>`<button class='opt' data-w='${w[1]}'>${w[0]}</button>`).join('')}</div><div class='row'><button class='btn pri' id='ov'>Valider</button><button class='btn' id='oc'>Effacer</button></div>`}
+if(x.k==="fill")h+='<form id="ff"><input id="fi" autocomplete="off" aria-label="Votre réponse"> <button class="btn pri">Valider</button></form>';
+if(x.k==="match"){const R=sh(x.p.map((p,j)=>[p[1],j]));h+=`<div class="pairs"><div class="opts">${x.p.map((p,j)=>`<button class="opt" data-l="${j}">${p[0]}</button>`).join("")}</div><div class="opts">${R.map(p=>`<button class="opt" data-r="${p[1]}">${p[0]}</button>`).join("")}</div></div>`}
+H(box,h+'<div id="fb"></div>');if(x.k==="fill")$("#fi").focus()}
+function result(ok){const r=run,x=r.L[r.i];if(ok)r.s++;r.done=true;
+$("#fb").innerHTML=`<p class="fb ${ok?"":"ko"}"><b>${ok?"Juste.":"Pas tout à fait."}</b> ${x.e}</p><button class="btn pri" id="nx">${r.i+1<r.L.length?"Question suivante":"Voir le score"}</button>`;$("#nx").focus()}
+$("#ex").onclick=e=>{const r=run;if(!r)return;const t=e.target;
+if(t.id==="nx"){r.i++;draw();return}
+if(t.id==="sp"){if(window.speechSynthesis){const u=new SpeechSynthesisUtterance(r.L[r.i].s);u.lang='fr-FR';u.rate=.85;speechSynthesis.cancel();speechSynthesis.speak(u)}return}
+const x0=r.L[r.i];if(x0&&x0.k==='ord'){if(r.done)return;if(t.dataset.w!==undefined&&!t.disabled){r.ans.push(x0.w[+t.dataset.w]);t.disabled=true;$('#oa').textContent=r.ans.join(' ')}if(t.id==='oc'){r.ans=[];document.querySelectorAll('[data-w]').forEach(b=>b.disabled=false);$('#oa').innerHTML='&nbsp;'}if(t.id==='ov')result(r.ans.join(' ')===x0.a);return}
+if(r.m==="cards"){if(t.closest("#cd")){r.flip=true;draw()}
+const k=t.dataset.k;if(k!==undefined){const c=r.L[r.i];if(k==="1"){if(c.f)r.s++}else{c.f=0;r.L.push({x:c.x,f:0})}r.i++;r.flip=false;draw()}return}
+const x=r.L[r.i];if(!x||r.done)return;
+if(x.k==="mcq"&&t.dataset.j!==undefined){const j=+t.dataset.j;document.querySelectorAll(".opt").forEach((b,i)=>{b.disabled=true;if(i===x.a)b.classList.add("good");else if(i===j)b.classList.add("bad")});result(j===x.a)}
+if(x.k==="match"){
+if(t.dataset.l!==undefined){document.querySelectorAll("[data-l]").forEach(b=>b.classList.remove("sel"));t.classList.add("sel");r.sel=+t.dataset.l}
+if(t.dataset.r!==undefined&&r.sel!==null){if(+t.dataset.r===r.sel){t.classList.add("done");document.querySelector('[data-l="'+r.sel+'"]').classList.add("done");r.ok++;r.sel=null;if(r.ok===x.p.length)result(!r.err)}else{r.err=true;t.classList.add("bad");setTimeout(()=>t.classList.remove("bad"),700)}}}};
+$("#ex").onsubmit=e=>{e.preventDefault();const r=run,x=r.L[r.i];if(r.done)return;result(x.a.includes(nm($("#fi").value)))};
+$("#ex").onkeydown=e=>{if((e.key==="Enter"||e.key===" ")&&e.target.id==="cd"){e.preventDefault();run.flip=true;draw()}};
+document.addEventListener("click",e=>{const b=e.target.closest("[data-go]");if(b)start(b.dataset.go)});
+
+/* Boutique */
+H($("#pl"),P.map((p,i)=>`<div class="shop"><div><b>${p.t}</b><div>${p.d}</div><div class="tg"><span>Format ${p.f}</span><span>Livré par Google Drive</span></div></div><div><span class="price">${p.p.toFixed(2)} USD</span> <button class="btn pri" data-b="${i}">Acheter</button></div></div>`).join(""));
+document.addEventListener("click",e=>{const b=e.target.closest("[data-b]");if(!b)return;const p=P[+b.dataset.b];
+const pp=CFG.paypalMe?`<a class="btn pri" target="_blank" rel="noopener" href="https://www.paypal.me/${CFG.paypalMe}/${p.p}USD">Payer avec PayPal</a>`:"";
+H($("#dc"),`<h3>${p.t}</h3><p>${p.d}</p><ul>${p.i.map(x=>"<li>"+x+"</li>").join("")}</ul><p><b>${p.p.toFixed(2)} USD</b>, format ${p.f}. Choisissez votre moyen de paiement ; le fichier Google Drive vous est partagé dès que le paiement est confirmé.</p><div class="row">${pp}<a class="btn ${pp?"":"pri"}" target="_blank" rel="noopener" href="${wa("Bonjour, je souhaite commander : "+p.t+" ("+p.p.toFixed(2)+" USD).")}">Commander sur WhatsApp</a></div><p class="mt">Virement bancaire ou Cash Plus possibles : demandez les détails sur WhatsApp.</p>`);$("#dl").showModal()});
+$("#dx").onclick=()=>$("#dl").close();
+/* Accueil et méthodes */
+H($('#hm'),[['Je révise',C.length+' cours et '+Q.length+' exercices','#cours'],['Je prépare le bac','Méthodes de résumé, de commentaire et de relecture','#methodes'],['Je veux des ressources',P.length+' produits à télécharger','#boutique']].map(x=>`<a class='tile' href='${x[2]}'><h3>${x[0]}</h3><p class='mt'>${x[1]}</p></a>`).join(''));
+const CK=['Accord du verbe avec son sujet','Accord des participes passés','Homophones : a/à, on/ont, ses/ces, leur/leurs','Accents et cédilles','Ponctuation et majuscules','Connecteurs logiques variés','Répétitions remplacées par des synonymes','Concordance des temps','Phrases courtes et claires','Relecture à voix haute'];
+let ck={};try{ck=JSON.parse(localStorage.getItem('mal_ck')||'{}')}catch(e){}
+H($('#ck'),CK.map((t,i)=>`<label><input type='checkbox' data-c='${i}' ${ck[i]?'checked':''}> ${t}</label>`).join(''));
+$('#ck').onchange=e=>{ck[e.target.dataset.c]=e.target.checked;try{localStorage.setItem('mal_ck',JSON.stringify(ck))}catch(x){}};
+$('#rd').oninput=e=>{const d=new Date(e.target.value);if(isNaN(d))return;H($('#ro'),[1,3,7,21].map(n=>`<li>Révision J+${n} : ${new Date(d.getTime()+n*864e5).toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long',timeZone:'UTC'})}</li>`).join(''))};
+</script>
+</body>
+</html>
